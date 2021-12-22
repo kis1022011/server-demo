@@ -1,0 +1,16 @@
+{
+  "note": [
+    "Do not define DB Server info (for production) in this config file due to security.",
+    "Because this will be included in source control repository, anyone can see DB Server info (for production).",
+    "Instead, define DB Server info via environment variables when starting server (see README.md)"
+  ],
+  "dbConfig": {
+    "host": "",
+    "port": "",
+    "user": "",
+    "pass": "",
+    "dbName": ""
+  },
+  "port": "",
+  "jwtSecret": ""
+}

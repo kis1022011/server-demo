@@ -1,0 +1,9 @@
+{
+  "dbConfig": {
+    "host": "localhost",
+    "port": "27017",
+    "dbName": "dart_server_test"
+  },
+  "port": 9000,
+  "jwtSecret": "fsoft@12345"
+}
