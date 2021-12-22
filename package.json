@@ -2,8 +2,9 @@
   "name": "dart_server",
   "version": "0.0.1",
   "description": "DART Server",
+  "main": "dist/server.js",
   "scripts": {
-    "start": "DEBUG=dart:* nodemon dist/server.js",
+    "start": "node dist/server.js",
     "start:dev": "tsc && node dist/server.js",
     "build": "tsc -w",
     "test": "DEBUG=dart:error jest --watchAll --detectOpenHandles --coverage"
