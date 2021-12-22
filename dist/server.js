@@ -11,7 +11,6 @@ const environment_1 = require("./startup/environment");
 const exception_1 = require("./startup/exception");
 const middleware_1 = require("./startup/middleware");
 const router_1 = require("./startup/router");
-const debugger_1 = require("./utils/debugger");
 const func_1 = require("./utils/func");
 const getter_1 = require("./utils/getter");
 exception_1.initExceptionHandler();
@@ -22,7 +21,7 @@ router_1.registerRoutes(app);
 database_1.connectDatabase();
 const port = getter_1.getConfig().port || 5000;
 const server = app.listen(port, () => {
-    debugger_1.debugInfo(chalk_1.default.green(func_1.parseStr(systemMessage_1.SYS_MSG_SERVER_STARTED, port)));
+    console.log(chalk_1.default.green(func_1.parseStr(systemMessage_1.SYS_MSG_SERVER_STARTED, port)));
 });
 module.exports = server;
 //# sourceMappingURL=server.js.map

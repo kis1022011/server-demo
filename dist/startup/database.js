@@ -8,7 +8,6 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const systemMessage_1 = require("../constants/systemMessage");
 const func_1 = require("../utils/func");
 const getter_1 = require("../utils/getter");
-const debugger_1 = require("../utils/debugger");
 exports.connectDatabase = () => {
     const { host, port, user, pass, dbName } = getter_1.getConfig().dbConfig;
     var dbOptions = {
@@ -30,9 +29,9 @@ exports.connectDatabase = () => {
     }
     mongoose_1.default
         .connect(dbAddr, dbOptions)
-        .then(() => debugger_1.debugInfo(chalk_1.default.green(func_1.parseStr(systemMessage_1.SYS_MSG_DB_CONNECTED, dbAddr))))
+        .then(() => console.log(chalk_1.default.green(func_1.parseStr(systemMessage_1.SYS_MSG_DB_CONNECTED, dbAddr))))
         .catch(() => {
-        debugger_1.debugError(chalk_1.default.redBright(`${systemMessage_1.SYS_MSG_DB_CANNOT_CONNECT}`));
+        console.log(chalk_1.default.redBright(`${systemMessage_1.SYS_MSG_DB_CANNOT_CONNECT}`));
         process.exit(1);
     });
 };
