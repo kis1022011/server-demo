@@ -21,9 +21,12 @@ exports.connectDatabase = () => {
     let dbAddr = `mongodb://${host}:${port}/${dbName}`;
     mongoose_1.default.set('useCreateIndex', true);
     mongoose_1.default.set('useFindAndModify', false);
-    if (process.env.MONGODB_ATLAS_URI == "production") {
+    if (process.env.MONGODB_ATLAS_URI) {
         dbAddr = process.env.MONGODB_ATLAS_URI;
-        dbOptions = {};
+        dbOptions = {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        };
     }
     mongoose_1.default
         .connect(dbAddr, dbOptions)
